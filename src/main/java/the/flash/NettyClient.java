@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author 闪电侠
+ * Netty 客户端启动的流程，一句话来说就是：创建一个引导类，然后给他指定线程模型，IO 模型，连接读写处理逻辑，连接上特定主机和端口，客户端就启动起来了。
+ * 然后，我们学习到 connect 方法是异步的，我们可以通过这个异步回调机制来实现指数退避重连逻辑。
  */
 public class NettyClient {
     private static final int MAX_RETRY = 5;
