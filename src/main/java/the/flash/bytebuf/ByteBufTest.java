@@ -45,14 +45,23 @@ public class ByteBufTest {
 
     private static void print(String action, ByteBuf buffer) {
         System.out.println("after ===========" + action + "============");
+        System.out.println("表示 ByteBuf 底层占用了多少字节的内存（包括丢弃的字节、可读字节、可写字节");
         System.out.println("capacity(): " + buffer.capacity());
+        System.out.println("表示 ByteBuf 底层最大能够占用多少字节的内存，当向 ByteBuf 中写数据的时候，如果发现容量不足，则进行扩容，直到扩容到 maxCapacity，超过这个数，就抛异常");
         System.out.println("maxCapacity(): " + buffer.maxCapacity());
+        System.out.println("当前的读指针 readerIndex");
         System.out.println("readerIndex(): " + buffer.readerIndex());
+        System.out.println("表示 ByteBuf 当前可读的字节数，它的值等于 writerIndex-readerIndex，如果两者相等，则不可读");
         System.out.println("readableBytes(): " + buffer.readableBytes());
+        System.out.println("是否可读");
         System.out.println("isReadable(): " + buffer.isReadable());
+        System.out.println("前者表示返回当前的写指针 writerIndex");
         System.out.println("writerIndex(): " + buffer.writerIndex());
+        System.out.println("表示 ByteBuf 当前可写的字节数，它的值等于 capacity-writerIndex，如果两者相等，则表示不可写");
         System.out.println("writableBytes(): " + buffer.writableBytes());
+        System.out.println("是否可写");
         System.out.println("isWritable(): " + buffer.isWritable());
+        System.out.println("表示可写的最大字节数，它的值等于 maxCapacity-writerIndex");
         System.out.println("maxWritableBytes(): " + buffer.maxWritableBytes());
         System.out.println();
     }
